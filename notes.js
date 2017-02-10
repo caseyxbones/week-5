@@ -41,3 +41,5 @@
       // examples:
             // see the underscorejs website
             // try the _.map and _.each examples out for yourself
+
+// Week 4 Lab 2 Stretch Goal Notes
