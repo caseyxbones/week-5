@@ -76,4 +76,19 @@
                   // Absolute =
                         // Removes an element from the natural flow of a page
                         // Looks for the next-highest parent element and positions relative to THAT element
-            // 
+
+    // CSS Selectors and Javascript/jQuery
+          // CSS Selectors allow you to apply styles to multiple tagged Elements
+          // in Javascript, the jQuery tools do something similar
+          // jQuery is a function ($) and we are telling it to look for any elements with the h3 tag:
+                $("h3");        //shorthand
+                jQuery("h3");   //longhand
+          // This will create an array of elements with an h3 HTML tag
+
+          // This will console.log out for any h3 tag you click on:
+                $("h3").click(function(x){
+                  console.log(x);
+                });
+
+          // This will let you modify an input field's value:
+                // .val() = the jQuery call you want to use
