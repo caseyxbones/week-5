@@ -31,15 +31,29 @@
                   };
 
             // _.each corresponds to the distinction between what a function does and what a function is
-                // what a function IS = whatever its return statement provides
-                // what a function DOES = the internal logic of the function
+                  // what a function IS = whatever its return statement provides
+                  // what a function DOES = the internal logic of the function
 
       // _.each will always return the original value of the function
       // _.map will return a new value based on the transormation within the fucntion
-          // If youre using _.each to push values into an empty array, _.map might be a better solution
-          // If you're using _.map to make a loop happen but not using the returned value, _.each might be a better solution
+            // If youre using _.each to push values into an empty array, _.map might be a better solution
+            // If you're using _.map to make a loop happen but not using the returned value, _.each might be a better solution
       // examples:
             // see the underscorejs website
             // try the _.map and _.each examples out for yourself
 
-// Week 4 Lab 2 Stretch Goal Notes
+// JAVASCRIPT, HTML & CSS together
+      // Separation of Concerns
+            // HTML = Structure
+            // CSS = Style
+            // Javascript = Behavior
+      // Cool Tools
+            // Atom --> View Panes --> Split Screen
+                  // Allows you to look at HTML and CSS or Javascript at the same time
+            // Emmet (Package) for Atom
+                  // makes it faster to write HTML
+            //DevTools in your browser
+                  // Elements tab is great for looking at HTML
+      // HTML IDs and Classes
+            // And ID is a unique element, there is only ONE
+            // A class is a type that can be applied to multiple elements
