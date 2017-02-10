@@ -57,3 +57,23 @@
       // HTML IDs and Classes
             // And ID is a unique element, there is only ONE
             // A class is a type that can be applied to multiple elements
+
+
+  // HTML STUFF
+      // DIVs versus SPANs
+            // DIVs are block-level objects
+                  // DIVs take up the full amount of space on a line
+                  // New DIVs will always start on a new line
+            // SPANs are in-line objects
+                  // SPANs will sit on lines and just take up as much room as there is
+                  // A new SPAN will move to a new line if the previous line is full
+      // Relative and Absolute Position
+            // Three types of positioning
+                  // Static = the default
+                  // Relative =
+                        // Allows you to reposition an element based on where it "natually" sits in the flow of the page
+                        // Good for when you want to just nudge something into a specific place
+                  // Absolute =
+                        // Removes an element from the natural flow of a page
+                        // Looks for the next-highest parent element and positions relative to THAT element
+            // 
