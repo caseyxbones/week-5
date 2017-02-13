@@ -76,7 +76,7 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
         Writing: $(someSelector).text(textToSet);  // This sets the value
 
 
-  Task 1: Using javascript, change the HTML to create useful labels for our UI
+  Task 1: Using javascript, change the HTML to create useful labels for our UI  //DONE
     *NOTE*: Do not edit part1-jquery.html. You should be able to change the text of an HTML element
             with jQuery alone! Try this: $(<selector>).text('text to set');
 
@@ -95,7 +95,7 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
     favorite color. Don't spend too much time on thinking about the perfect object to represent with
     this form, just about anything will do.
 
-  Task 2: Setting (writing) input values
+  Task 2: Setting (writing) input values // DONE
     *NOTE*: An input's value is not the same as an HTML element's text. We use $(selector).val() as
             opposed to $(selector).text() in this case.
 
@@ -104,7 +104,7 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
     want to get formatting exactly right to set a color field; experiment in the console to see what
     the color you'll specify should look like).
 
-  Task 3: Getting (reading) input values
+  Task 3: Getting (reading) input values // DONE
     Write the code necessary to read from your input form and return a javascript object (with keys
     to clarify the meaning of each value) that has all the data that's stored in your form.
 
@@ -172,21 +172,26 @@ $(document).ready(function() {
 
   $("#main-heading").text("Directory of Humans");
   $("#text-label1").text("First Name");
-        $("#text-input1").val("Jane");
+        $("#text-input1").val("e.g. Jane");
+        $("#text-input1").prop("disabled", false);
   $("#text-label2").text("Middle Name");
-        $("#text-input2").val("Bartholomew");
+        $("#text-input2").val("e.g. Bartholomew");
+        $("#text-input2").prop("disabled", false);
   $("#text-label3").text("Last Name");
-        $("#text-input3").val("Doe");
+        $("#text-input3").val("e.g Doe");
+        $("#text-input3").prop("disabled", false);
   $("#number-label").text("Age");
-        $("#numeric-input").val("103");
+        $("#numeric-input").val("");
+        $("#numeric-input").prop("disabled", false);
   $("#checkbox-label1").text("Has Pets");
         $("#cbox-input1").prop("disabled", false);
-        $("#cbox-input1").prop("checked", true);
+        // $("#cbox-input1").prop("checked", true);
   $("#checkbox-label2").text("Owns Bicycle");
         $("#cbox-input2").prop("disabled", false);
-        $("#cbox-input2").prop("checked", true);
+        // $("#cbox-input2").prop("checked", true);
   $("#color-label").text("Favorite Color");
-        $("#color-input").val("#419F75");
+        // $("#color-input").val("#419F75");
+        $("#color-input").prop("disabled", false);
   $("button").text("Search");
 
  var userForm = {};
