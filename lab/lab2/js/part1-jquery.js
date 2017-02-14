@@ -114,7 +114,7 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
     form we've created as part of a GUI (Graphical User Interface - pronounced like 'gooey'). To do
     this, we can use another jQuery method: 'prop'.
 
-    Here's a simple, disabled input field:
+    Here's a simple, disabled input field: // DONE
     <input id="someInput" type="number" disabled>
 
     You can see in this HTML that the input field is disabled. You could also see this by querying
@@ -127,7 +127,7 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 
     Enable *all* fields on this form.
 
-  Task 5: Add a button trigger to log this form's object to console
+  Task 5: Add a button trigger to log this form's object to console // DONE
     We now can enter data through the HTML and create an object to represent that data. Add a button
     click event to the button at the bottom of your form. This means that we want to use jQuery to
     bind your input-reading function (what you did in task 3) to the button's 'click' event.
@@ -172,16 +172,16 @@ $(document).ready(function() {
 
   $("#main-heading").text("Directory of Humans");
   $("#text-label1").text("First Name");
-        $("#text-input1").val("e.g. Jane");
+        $("#text-input1").val();
         $("#text-input1").prop("disabled", false);
   $("#text-label2").text("Middle Name");
-        $("#text-input2").val("e.g. Bartholomew");
+        // $("#text-input2").val("e.g. Bartholomew");
         $("#text-input2").prop("disabled", false);
   $("#text-label3").text("Last Name");
-        $("#text-input3").val("e.g Doe");
+        // $("#text-input3").val("e.g Doe");
         $("#text-input3").prop("disabled", false);
   $("#number-label").text("Age");
-        $("#numeric-input").val("");
+        // $("#numeric-input").val("");
         $("#numeric-input").prop("disabled", false);
   $("#checkbox-label1").text("Has Pets");
         $("#cbox-input1").prop("disabled", false);
@@ -194,14 +194,22 @@ $(document).ready(function() {
         $("#color-input").prop("disabled", false);
   $("button").text("Search");
 
- var userForm = {};
- userForm.firstName = $("#text-input1").val();
- userForm.middleName = $("#text-input2").val();
- userForm.lastName = $("#text-input3").val();
- userForm.age = $("#numeric-input").val();
- userForm.hasPets = $("#cbox-input1").prop("checked");
- userForm.ownsBicycle = $("#cbox-input2").prop("checked");
- userForm.favoriceColor = $("#color-input").val();
+  //So this will work to get the data from the userform but the HTML is overriding any user input :(
+   // $("button").click(function() {
+   //     console.log(userForm);
+   // });
 
+// FUCK YES I DID IT:
+$("button").click(function() {
+    var userForm = {};
+        userForm.firstName = $("#text-input1").val();
+        userForm.middleName = $("#text-input2").val();
+        userForm.lastName = $("#text-input3").val();
+        userForm.age = $("#numeric-input").val();
+        userForm.hasPets = $("#cbox-input1").prop("checked");
+        userForm.ownsBicycle = $("#cbox-input2").prop("checked");
+        userForm.favoriceColor = $("#color-input").val();
  console.log(userForm);
+  });
+
 });
