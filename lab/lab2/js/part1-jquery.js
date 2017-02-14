@@ -169,28 +169,31 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 // the function passed to `ready` until the HTML document is fully loaded and all scripts have
 // been interpreted. It is, therefore, an example of asynchronous behavior.
 $(document).ready(function() {
-
-  $("#main-heading").text("Directory of Humans");
-  $("#text-label1").text("First Name");
-        $("#text-input1").val();
-        $("#text-input1").prop("disabled", false);
-  $("#text-label2").text("Middle Name");
-        // $("#text-input2").val("e.g. Bartholomew");
-        $("#text-input2").prop("disabled", false);
-  $("#text-label3").text("Last Name");
-        // $("#text-input3").val("e.g Doe");
-        $("#text-input3").prop("disabled", false);
-  $("#number-label").text("Age");
-        // $("#numeric-input").val("");
-        $("#numeric-input").prop("disabled", false);
-  $("#checkbox-label1").text("Has Pets");
-        $("#cbox-input1").prop("disabled", false);
-        // $("#cbox-input1").prop("checked", true);
-  $("#checkbox-label2").text("Owns Bicycle");
-        $("#cbox-input2").prop("disabled", false);
-        // $("#cbox-input2").prop("checked", true);
-  $("#color-label").text("Favorite Color");
-        // $("#color-input").val("#419F75");
+//THIS IS ALL commented out so I can work on part 6:
+  // $("#main-heading").text("Directory of Humans");
+  // $("#text-label1").text("First Name");
+  //       $("#text-input1").val();
+  //       $("#text-input1").prop("disabled", false);
+  // $("#text-label2").text("Middle Name");
+  //       // $("#text-input2").val("e.g. Bartholomew");
+  //       $("#text-input2").prop("disabled", false);
+  // $("#text-label3").text("Last Name");
+  //       // $("#text-input3").val("e.g Doe");
+  //       $("#text-input3").prop("disabled", false);
+  // $("#number-label").text("Age");
+  //       // $("#numeric-input").val("");
+  //       $("#numeric-input").prop("disabled", false);
+  // $("#checkbox-label1").text("Has Pets");
+  //       $("#cbox-input1").prop("disabled", false);
+  //       // $("#cbox-input1").prop("checked", true);
+  // $("#checkbox-label2").text("Owns Bicycle");
+  //       $("#cbox-input2").prop("disabled", false);
+  //       // $("#cbox-input2").prop("checked", true);
+  $("#lat-input").text();
+        $("#lat-input").prop("disabled", false);
+  $("#long-input").text();
+        $("#long-label").prop("disabled", false);
+  $("#color-label").text("Marker color");
         $("#color-input").prop("disabled", false);
   $("button").text("Search");
 
@@ -202,14 +205,44 @@ $(document).ready(function() {
 // FUCK YES I DID IT:
 $("button").click(function() {
     var userForm = {};
-        userForm.firstName = $("#text-input1").val();
-        userForm.middleName = $("#text-input2").val();
-        userForm.lastName = $("#text-input3").val();
-        userForm.age = $("#numeric-input").val();
-        userForm.hasPets = $("#cbox-input1").prop("checked");
-        userForm.ownsBicycle = $("#cbox-input2").prop("checked");
-        userForm.favoriceColor = $("#color-input").val();
- console.log(userForm);
+        // userForm.firstName = $("#text-input1").val();
+        // userForm.middleName = $("#text-input2").val();
+        // userForm.lastName = $("#text-input3").val();
+        // userForm.age = $("#numeric-input").val();
+        // userForm.hasPets = $("#cbox-input1").prop("checked");
+        // userForm.ownsBicycle = $("#cbox-input2").prop("checked");
+        // userForm.favoriceColor = $("#color-input").val();
+        userForm.lat= $("#lat-input").val();
+        userForm.long= $("#long-input").val();
+        userForm.color= $("#color-input").val();
+        // console.log(userForm);
+        var lat = (userForm.lat);
+        var long = (userForm.long);
+        var markerColor = (userForm.color);
+
+        var makeMarkers =  function (parsedInformation) {
+            var markersTemp = _.map(parsedInformation, function(crash) {
+              // console.log(L.marker([crash.LAT, crash.LNG]));
+              console.log(latKey, longKey);
+              return L.marker([crash[lat], crash[long]]);
+            }
+          );
+          return markersTemp;
+        };
+        var plotMarkers = function(markersAll) {
+            _.each(markersAll, function (individualMarker) {
+              individualMarker.addTo(map);
+            }
+            );
+        };
+        downloadData.done(function(data) {
+          var parsed = parseData(data);
+          // var filtered = filterData(parsed);
+          var markers = makeMarkers(parsed);
+          plotMarkers(markers);
+        });
+
+
   });
 
 });

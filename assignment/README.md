@@ -9,13 +9,13 @@ Instead of hardcoding information about your dataset in the javascript file, you
 will allow the user to enter this information and press a button to add markers
 to the map.
 
-#### Task 1
+#### Task 1 // COMPLETE
 
 First, we need to copy any logic from Week 4's Lab 2, Part 2. Copy
 part2-app-state.js from Week 4's Lab 2, Part 2 into main.js. Run index.html
 in Week 5 Assignment and make sure your code still works properly. It should!
 
-#### Task 2
+#### Task 2 // DONE
 
 In your index.html file, add four elements:
 
@@ -45,4 +45,3 @@ event on it. When the button is clicked, it should run a function that selects
 the three input fields, checks their values, and assigns those values to
 variables. Those variables should be used in your application to replace
 previously hardcoded data.
-
