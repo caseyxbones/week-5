@@ -12,6 +12,31 @@
       <!-- =====================
       Add elements in this space
       ====================== -->
+      <p class="heading">
+        INSTRUCTIONS
+      <p class="main">
+        Each dataset has its own key or label for these values. For example, Philadelphia's Bike Crash data uses LAT and LNG,
+        while Solar Installation data uses X and Y or LONG\_ and LAT.
+        <br>
+        <br>
+        You need to be able to enter the keys which you hope to extract Latitude and Longitude information from in addition to the URL for the dataset.
+      </p>
+      <p>
+        <center>-----------------------------------</center>
+      </p>
+      <label id="url-label" class="input-label" for="url-input">Enter the dataset URL:</label>
+      <input id="url-input" class="input-text" type="text" placeholder="e.g. http://www.mycoolwebsite.com/data">
+      <br>
+      <br>
+      <label id="lat-label" class="input-label" for="lat-input">Enter your data's Latitude key:</label>
+      <input id="lat-input" class="input-text" type="text" placeholder="e.g. LAT">
+      <br>
+      <br>
+      <label id="long-label" class="input-label" for="long-input">Enter your data's Longitude key:</label>
+      <input id="long-input" class="input-text" type="text" placeholder="e.g. LNG">
+      <br>
+      <br>
+      <button>Submit</button>
     </div>
     <!-- Map -->
     <div id="map" class="map"></div>
