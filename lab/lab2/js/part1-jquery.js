@@ -136,7 +136,7 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
     Keep in mind that events are asynchronous, just like ajax. The function you bind is not called
     until the event on which it is bound is triggered.
 
-  Task 6: Plot input data to the map on button click
+  Task 6: Plot input data to the map on button click // DONE
     Modify this form to include at least a lat (number), long (number), description (text), and
     color (color) inputs. With these inputs you should be able to plot a circle marker
     (http://leafletjs.com/reference.html#circlemarker) to the lat/long on the form, with the color
@@ -216,33 +216,10 @@ $("button").click(function() {
         userForm.long= $("#long-input").val();
         userForm.color= $("#color-input").val();
         // console.log(userForm);
-        var lat = (userForm.lat);
-        var long = (userForm.long);
-        var markerColor = (userForm.color);
-
-        var makeMarkers =  function (parsedInformation) {
-            var markersTemp = _.map(parsedInformation, function(crash) {
-              // console.log(L.marker([crash.LAT, crash.LNG]));
-              console.log(latKey, longKey);
-              return L.marker([crash[lat], crash[long]]);
-            }
-          );
-          return markersTemp;
-        };
-        var plotMarkers = function(markersAll) {
-            _.each(markersAll, function (individualMarker) {
-              individualMarker.addTo(map);
-            }
-            );
-        };
-        downloadData.done(function(data) {
-          var parsed = parseData(data);
-          // var filtered = filterData(parsed);
-          var markers = makeMarkers(parsed);
-          plotMarkers(markers);
-        });
-
-
+        var lat = userForm.lat;
+        var long = userForm.long;
+        var markerColor = userForm.color;
+        console.log(lat, long, markerColor);
+        L.circleMarker([lat,long],{radius:20, color:markerColor, fillOpacity:0.5}).addTo(map);
   });
-
 });
